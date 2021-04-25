@@ -6,13 +6,21 @@ public class PiedraPapelTijera{
 	public static void main(String[] args) {
 
 		Scanner entrada = new Scanner(System.in);
-		Random aleatorio = new Random();
 
 		//Incio del programa
 		System.out.println("\t--- Piedra, Papel o Tijera --- \n Escribe una opcion para jugar:\tPiedra, Papel o Tijera");
 		String opcionJugador = entrada.next();
-		boolean validacion = (valido(opcionJugador)) ? true: false ;
-		System.out.println(validacion);
+		String opcionMaquina = jugada();
+
+		//Condicionales
+		if(valido(opcionJugador)){
+
+			
+
+		}else {
+			System.out.println("\tIngresa un valor valido :S");
+		}
+		
 
 
 	}
@@ -26,7 +34,27 @@ public class PiedraPapelTijera{
 		} else {
 			return false;
 		}
+	}
 
+	//jugada maquina
+	public static String jugada(){
+		Random r = new Random();
+		int a = r.nextInt(3);
+		String valor = "";
+
+		if(a == 1){
+			valor = "PIEDRA";
+		}else if(a == 2){
+			valor = "PAPEL";
+		} else if(a == 3){
+			valor = "TIJERA";
+		}
+		return valor;
 
 	}
+
+	//jugar
+	//public static boolean jugar(){}
+
+
 }
