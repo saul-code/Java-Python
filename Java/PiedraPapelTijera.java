@@ -6,11 +6,27 @@ public class PiedraPapelTijera{
 	public static void main(String[] args) {
 
 		Scanner entrada = new Scanner(System.in);
-		Random aleatorios = new Random();
+		Random aleatorio = new Random();
 
-		System.out.println(" Hola mucho gusto mi nombre es: \r\n Saul Lopez");
-		
-		
-		
+		//Incio del programa
+		System.out.println("\t--- Piedra, Papel o Tijera --- \n Escribe una opcion para jugar:\tPiedra, Papel o Tijera");
+		String opcionJugador = entrada.next();
+		boolean validacion = (valido(opcionJugador)) ? true: false ;
+		System.out.println(validacion);
+
+
+	}
+
+	//metodos
+	//validacion de entrada
+	public static boolean valido(String a){
+		String entrada = a.toUpperCase();
+		if(entrada.equals("PIEDRA") || entrada.equals("PAPEL") || entrada.equals("TIJERA")){
+			return true;
+		} else {
+			return false;
+		}
+
+
 	}
 }
