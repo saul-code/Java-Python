@@ -1,4 +1,6 @@
+import java.util.Scanner;
 public class Robot {
+
     //Atributos
     String numeroSerie;
     String nombre;
