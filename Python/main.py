@@ -50,6 +50,7 @@ class DataBase:
   		self.cursor.execute(sql)
   		self.connection.commit()
   		
+    A
   	except Exception as e:
   		raise 
 
