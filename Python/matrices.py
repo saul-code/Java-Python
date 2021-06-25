@@ -8,7 +8,7 @@ def multi(array1,array2):
 	try:
 	  c = np.matmul(a,b)
 	  print(c)
-  except ValueError:
+    except ValueError:
 	  print("No se pueden multiplicar las matrices")
 
 multi(a,b)
