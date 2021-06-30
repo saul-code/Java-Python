@@ -4,30 +4,28 @@ from pygame.locals import *
 #constantes
 WIDTH = 640
 HEIGHT = 480
+COLOR = (0,140,60)
+IMAGEN = pygame.image.load('imagenes/fondo.jpg')
 
 #Funciones
  
-def load_image(filename, transparent=False):
-        try: image = pygame.image.load(filename)
-        except: pygame.error, message 
-        raise SystemExit, message
-        image = image.convert()
-        if transparent:
-                color = image.get_at((0,0))
-                image.set_colorkey(color, RLEACCEL)
-        return image
 
 #main
 
 def main():
     screen = pygame.display.set_mode((WIDTH,HEIGHT))
     pygame.display.set_caption("Prueba")
+    screen.blit(IMAGEN,(0,0))
+
 
     while True:
+        #screen.fill(COLOR)
         for events in pygame.event.get():
             if events.type == QUIT:
-                sys,exit(0)
-    return 0
+                sys.exit(0)
+        pygame.display.flip()
+        #pygame.display.update()
+        
 
 if __name__ == '__main__':
     pygame.init()
