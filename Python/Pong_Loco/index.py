@@ -30,6 +30,17 @@ class Pelota(pygame.sprite.Sprite):
                 self.posicion[0]+=self.velocidad[1]
             else:
                 direccion = True
+    def actualizar(self,time):
+        self.posicion[0]+=self.velocidad[0]*time
+        self.posicion[1]+=self.velocidad[1]*time
+        if self.posicion[0]<=0 or self.posicion[0]>=WIDTH:
+            self.velocidad[0]=-self.velocidad[0]
+            self.posicion[0]+=self.velocidad[0]*time
+        if self.posicion[1]<=0 or self.posicion[1]>=HEIGHT:
+            self.velocidad[1] = -self.velocidad[1]
+            self.posicion[1] +=self.velocidad[1]*time
+
+
 
 
 #Funciones
@@ -42,18 +53,20 @@ def main():
     screen = pygame.display.set_mode((WIDTH,HEIGHT))
     pygame.display.set_caption("Prueba")
     pelota = Pelota((1,45,120),20)
+    clock = pygame.time.Clock() 
     #screen.blit(IMAGEN,(0,0))
     
 
 
     while True:
-        
+        tiempo = clock.tick(60)
         for events in pygame.event.get():
             if events.type == QUIT:
                 sys.exit(0)
+
+        pelota.actualizar(tiempo)
         screen.fill(COLOR) 
         pygame.draw.circle(screen,pelota.color,pelota.posicion,pelota.radio)
-        pelota.mover()
 
         pygame.display.flip()
         #pygame.display.update()
