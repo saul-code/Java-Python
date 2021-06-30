@@ -1,5 +1,9 @@
 plantilla.py
 
+*.py.un~
+*.py~
+
+
 # Compiled class file
 *.class
 
